@@ -29,14 +29,14 @@ export default function Veggie() {
   return (
     <div>
       <Wrapper>
-        <h3>Our Vegetatian Picks</h3>
+        <h1>Our Vegetatian Picks</h1>
         <Splide
           options={{
             perPage: 4,
             arrows: true,
             pagination: false,
             drag: "free",
-            gap: "5rem",
+            gap: "0.5rem",
           }}
         >
           {veggie.map((recipe) => {
@@ -46,6 +46,7 @@ export default function Veggie() {
                   <Link to={`/recipe/${recipe.id}`}>
                     <p>{recipe.title}</p>
                     <img src={recipe.image} atl={recipe.title} />
+
                     <Gradient />
                   </Link>
                 </Card>
@@ -59,7 +60,7 @@ export default function Veggie() {
 }
 
 const Wrapper = styled.div`
-  margin: 4rem 0rem;
+  margin: 2rem 0rem;
 `
 const Card = styled.div`
   min-height: 25rem;

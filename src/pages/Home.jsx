@@ -2,6 +2,7 @@ import React from "react"
 import Popular from "../components/Popular"
 import Veggie from "../components/Veggie"
 import { motion } from "framer-motion"
+import Feed from "../components/Feed"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
     >
       <Popular />
       <Veggie />
+      <Feed />
     </motion.div>
   )
 }

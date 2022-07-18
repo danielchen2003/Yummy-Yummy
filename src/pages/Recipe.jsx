@@ -43,6 +43,7 @@ export default function Recipe() {
           <div>
             <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
             <h3 dangerouslySetInnerHTML={{ __html: details.instructions }}></h3>
+            <h3>Estimated cooking time: {details.readyInMinutes}</h3>
           </div>
         )}
         {activeTab === "ingredients" && (
@@ -66,6 +67,9 @@ const DetailWrapper = styled.div`
   }
   h2 {
     margin-bottom: 2rem;
+  }
+  h3 {
+    font-family: roboto;
   }
   li {
     font-size: 1.2rem;

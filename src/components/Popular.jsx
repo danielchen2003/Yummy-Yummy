@@ -29,14 +29,14 @@ export default function Popular() {
   return (
     <div>
       <Wrapper>
-        <h3>Popular Picks</h3>
+        <h1>Popular Picks</h1>
         <Splide
           options={{
             perPage: 3,
             arrows: true,
             pagination: false,
             drag: "free",
-            gap: "5rem",
+            gap: "0.5rem",
           }}
         >
           {popular.map((recipe) => {
