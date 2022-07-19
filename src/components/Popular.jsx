@@ -60,6 +60,9 @@ export default function Popular() {
 
 const Wrapper = styled.div`
   margin: 4rem 0rem;
+  h1 {
+    color: #8acedb;
+  }
 `
 const Card = styled.div`
   min-height: 25rem;

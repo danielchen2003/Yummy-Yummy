@@ -10,24 +10,35 @@ import {
   Toolbar,
   Typography,
   Search,
+  alpha,
+  Input,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
 } from "@mui/material"
 import { useState } from "react"
 import React from "react"
 import PetsRoundedIcon from "@mui/icons-material/PetsRounded"
 import FoodBankRoundedIcon from "@mui/icons-material/FoodBankRounded"
 import { padding } from "@mui/system"
-// import Badge from "@mui/material/Badge"
+import BookmarksIcon from "@mui/icons-material/Bookmarks"
+
 import { Mail, Notifications, Pets } from "@mui/icons-material"
 import Button from "@mui/material/Button"
-import SearchKeyWords from "./SearchKeyWords"
+// import SearchKeyWords from "./SearchKeyWords"
+import SearchIcon from "@mui/icons-material/Search"
+import { useNavigate, Link } from "react-router-dom"
+import PrimarySearchBar from "./Seachbar"
 
-export default function Navbar() {
+export default function Navbar({ darkTheme }) {
   const StyledToolbar = styled(Toolbar)({
     display: "flex",
     justifyContent: "space-between",
-    backgroundColor: "#f04328",
+    // backgroundColor: darkTheme.palette.primary.dark,
   })
-
+  // darkTheme.palette.primary.dark
   const Icons = styled(Box)(({ theme }) => ({
     display: "none",
     alignItems: "center",
@@ -56,13 +67,28 @@ export default function Navbar() {
 
   const [open, setOpen] = useState(false)
 
+  // const [input, setInput] = useState("")
+
   return (
     <AppBar position="sticky">
       <StyledToolbar>
-        <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-          <FoodBankRoundedIcon fontSize="large"></FoodBankRoundedIcon> Yummy
-          Yummy
-        </Typography>
+        <Icons>
+          <FoodBankRoundedIcon
+            margin="0"
+            p="0"
+            fontSize="large"
+          ></FoodBankRoundedIcon>
+          <Typography
+            fontFamily="Source Serif Pro"
+            alignContent="center"
+            justifyContent="center"
+            gutterBottom={false}
+            variant="h3"
+            sx={{ display: { xs: "none", sm: "block" } }}
+          >
+            Yummy
+          </Typography>
+        </Icons>
 
         <FoodBankRoundedIcon
           fontSize="large"
@@ -71,22 +97,37 @@ export default function Navbar() {
         {/* <Search>
           <InputBase placeholder="search..."></InputBase>
         </Search> */}
-        <Box>
-          <SearchKeyWords />
-        </Box>
+        <PrimarySearchBar></PrimarySearchBar>
+
         <Icons>
-          <Badge badgeContent={4} color="error">
+          <Badge badgeContent={7} color="error">
             <Mail />
           </Badge>
-          <Badge badgeContent={2} color="error">
+          <Badge badgeContent={4} color="error">
             <Notifications />
           </Badge>
+          <ListItem disablePadding>
+            <ListItemButton component="a" href="/favorite">
+              {/* navigate(`/searched/${input}`) */}
+              <ListItemIcon>
+                <BookmarksIcon />
+              </ListItemIcon>
+            </ListItemButton>
+          </ListItem>
+
           <Avatar
             sx={{ width: 30, height: 30 }}
             src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             onClick={(e) => setOpen(true)}
           />
         </Icons>
+        <UserBox onClick={(e) => setOpen(true)}>
+          <Avatar
+            sx={{ width: 30, height: 30 }}
+            src="https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          />
+          <Typography variant="span">Linfeng</Typography>
+        </UserBox>
       </StyledToolbar>
       <Menu
         id="demo-positioned-menu"

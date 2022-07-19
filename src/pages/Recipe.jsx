@@ -1,9 +1,20 @@
 import styled from "styled-components"
 import { useState, useEffect } from "react"
 import React from "react"
+import { Favorite, FavoriteBorder, MoreVert, Share } from "@mui/icons-material"
 import { useParams } from "react-router-dom"
+import {
+  Typography,
+  Card,
+  CardActions,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  Checkbox,
+  IconButton,
+} from "@mui/material"
 
-export default function Recipe() {
+export default function Recipe({ favorite, setFavorite }) {
   let params = useParams()
   console.log(params.name)
   const [details, setDetails] = useState({})
@@ -20,11 +31,32 @@ export default function Recipe() {
     fetchDetails()
   }, [params.name])
 
+  //加入喜欢
+  //如果选中那么久把他标记为 favoriteitem
+  function handleAddToFavorite() {
+    const newFavorite = [...favorite, details]
+    setFavorite(newFavorite) //和之前的obj组合起来
+    localStorage.setItem("Favorite", JSON.stringify(newFavorite)) //放入本地
+    console.log(favorite)
+  }
+
   return (
     <DetailWrapper>
       <div>
         <h2>{details.title}</h2>
-        <img src={details.image} alt="" />
+        <img src={details.image} alt="recipe image" />
+        <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            <Checkbox
+              onChange={handleAddToFavorite}
+              icon={<FavoriteBorder />}
+              checkedIcon={<Favorite sx={{ color: "red" }} />}
+            />
+          </IconButton>
+          <IconButton aria-label="share">
+            <Share />
+          </IconButton>
+        </CardActions>
       </div>
       <Info>
         <Button
@@ -41,6 +73,22 @@ export default function Recipe() {
         </Button>
         {activeTab === "instructions" && (
           <div>
+            {/* <Typography
+             
+              fontFamily="Source Serif Pro"
+              alignContent="center"
+              justifyContent="center"
+              gutterBottom={false}
+              variant="h2"
+              sx={{ display: { xs: "none", sm: "block" } }}
+            >
+              Yummy
+            </Typography> */}
+            {/* <Typography paragraph>
+              Heat 1/2 cup of the broth in a pot until simmering, add saffron
+              and set aside for 10 minutes.
+            </Typography>
+            <Typography paragraph>{details.summary}</Typography> */}
             <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
             <h3 dangerouslySetInnerHTML={{ __html: details.instructions }}></h3>
             <h3>Estimated cooking time: {details.readyInMinutes}</h3>
@@ -61,6 +109,10 @@ const DetailWrapper = styled.div`
   margin-top: 10rem;
   margin-bottom: 5rem;
   display: flex;
+  a {
+    text-decoration: none;
+    color: #8acedb;
+  }
   .active {
     background: linear-gradient(35deg, #494949, #313131);
     color: white;

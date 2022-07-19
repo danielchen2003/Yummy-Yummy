@@ -2,12 +2,14 @@ import { FaPizzaSlice, FaHamburger } from "react-icons/fa"
 import { GiNoodles, GiChopsticks, GiWhiteBook } from "react-icons/gi"
 import styled from "styled-components"
 import { NavLink } from "react-router-dom"
+import IcecreamIcon from "@mui/icons-material/Icecream"
 
 export default function Category() {
   return (
     <List>
       <Slink to={`/cuisine/Italian`}>
         <FaPizzaSlice />
+
         <h4>Italian</h4>
       </Slink>
       <Slink to={`/cuisine/American`}>

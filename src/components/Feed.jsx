@@ -39,7 +39,7 @@ const Feed = () => {
       ) : (
         <>
           {newPost.map((recipe) => {
-            return <Post recipe={recipe}></Post>
+            return <Post recipe={recipe} key={recipe.id}></Post>
           })}
         </>
       )}

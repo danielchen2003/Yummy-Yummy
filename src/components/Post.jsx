@@ -15,33 +15,34 @@ import { Link } from "react-router-dom"
 export default function Post(props) {
   return (
     <Card sx={{ margin: 5 }}>
-      <Link to={`/recipe/${props.recipe.id}`}>
-        <CardHeader
-          avatar={
-            <Avatar sx={{ bgcolor: "#f04328" }} aria-label="recipe">
-              R
-            </Avatar>
-          }
-          action={
-            <IconButton aria-label="settings">
-              <MoreVert />
-            </IconButton>
-          }
-          title="Linfeng Chen"
-          subheader="September 01, 2022"
-        />
+      <CardHeader
+        avatar={
+          <Avatar sx={{ bgcolor: "#f04328" }} aria-label="recipe">
+            R
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVert />
+          </IconButton>
+        }
+        title="Linfeng Chen"
+        subheader="September 01, 2022"
+      />
+      <Link to={`/recipe/${props.recipe.id}`} text-decoration="none">
         <CardMedia
           component="img"
           height="20%"
           image={props.recipe.image}
           alt={props.recipe.title}
         />
-        <CardContent>
-          <Typography variant="body2" color="text.secondary">
-            {props.recipe.title}
-          </Typography>
-        </CardContent>
       </Link>
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          {props.recipe.title}
+        </Typography>
+      </CardContent>
+
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <Checkbox

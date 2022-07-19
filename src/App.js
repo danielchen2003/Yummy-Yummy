@@ -6,36 +6,41 @@ import styled from "styled-components"
 import { GiKnifeFork } from "react-icons/gi"
 import Navbar from "./components/Navbar"
 import Sidebar from "./components/Sidebar"
-import { createTheme, Stack, ThemeProvider } from "@mui/material"
+import { createTheme, Stack, ThemeProvider, Paper } from "@mui/material"
 import React, { useState } from "react"
 
 import Feed from "./components/Feed"
 
 export default function App() {
   const [mode, setMode] = useState("dark")
-
+ 
   const darkTheme = createTheme({
     palette: {
       mode: mode,
+      primary: {
+        main: "#8acedb",
+        light: "white",
+        dark: "#2e973e",
+      },
+      secondary: {
+        main: "#f04328",
+      },
     },
   })
 
   return (
     <div className="App">
       <ThemeProvider theme={darkTheme}>
-        <BrowserRouter>
-          <Navbar></Navbar>
-          {/* <Nav>
-          <GiKnifeFork></GiKnifeFork>
-          <Logo to={"/"}>Yummy Yummy</Logo>
-        </Nav> */}
-          {/* <Search /> */}
-          <Category />
-          <Stack direction="row" spacing={2} justifyContent="space-between">
-            <Sidebar setMode={setMode} mode={mode} />
-            <Pages />
-          </Stack>
-        </BrowserRouter>
+        <Paper>
+          <BrowserRouter>
+            <Navbar></Navbar>
+            <Category />
+            <Stack direction="row" spacing={2} justifyContent="space-between">
+              <Sidebar setMode={setMode} mode={mode} />
+              <Pages />
+            </Stack>
+          </BrowserRouter>
+        </Paper>
       </ThemeProvider>
     </div>
   )
