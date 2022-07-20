@@ -1,4 +1,4 @@
-import { Box, Stack, Skeleton } from "@mui/material"
+import { Box, Stack, Skeleton, Typography } from "@mui/material"
 import React, { useState, useEffect } from "react"
 import Post from "./Post"
 import examplePost from "../data"
@@ -30,7 +30,9 @@ const Feed = () => {
 
   return (
     <Box flex={4} p={{ xs: 0, md: 2 }}>
-      <h1>Lastest Post</h1>
+      <Typography variant="h3" fontFamily="Source Serif Pro">
+        Lastest Post
+      </Typography>
       {loading ? (
         <Stack spacing={1}>
           <Skeleton variant="text" height={100} />

@@ -10,10 +10,11 @@ import { createTheme, Stack, ThemeProvider, Paper } from "@mui/material"
 import React, { useState } from "react"
 
 import Feed from "./components/Feed"
+import { Add } from "@mui/icons-material"
 
 export default function App() {
   const [mode, setMode] = useState("dark")
- 
+
   const darkTheme = createTheme({
     palette: {
       mode: mode,

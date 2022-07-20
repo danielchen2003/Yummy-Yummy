@@ -126,6 +126,7 @@ const DetailWrapper = styled.div`
   li {
     font-size: 1.2rem;
     line-height: 2.5rem;
+    font-family: roboto;
   }
   ul {
     margin-top: 2rem;

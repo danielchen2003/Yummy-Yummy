@@ -32,11 +32,13 @@ import Button from "@mui/material/Button"
 import SearchIcon from "@mui/icons-material/Search"
 import { useNavigate } from "react-router-dom"
 import PrimarySearchBar from "./Seachbar"
+import Add from "./Add"
 
 export default function Navbar({ darkTheme }) {
   const StyledToolbar = styled(Toolbar)({
     display: "flex",
     justifyContent: "space-between",
+    height: "85px",
     // backgroundColor: darkTheme.palette.primary.dark,
   })
   // darkTheme.palette.primary.dark
@@ -132,7 +134,9 @@ export default function Navbar({ darkTheme }) {
           />
           <Typography variant="span">Linfeng</Typography>
         </UserBox>
+        <Add></Add>
       </StyledToolbar>
+
       <Menu
         id="demo-positioned-menu"
         aria-labelledby="demo-positioned-button"

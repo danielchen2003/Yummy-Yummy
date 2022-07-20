@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import "@splidejs/react-splide/css"
 import { Link } from "react-router-dom"
+import { Typography } from "@mui/material"
 
 export default function Veggie() {
   const [veggie, setVeggie] = useState([])
@@ -29,7 +30,10 @@ export default function Veggie() {
   return (
     <div>
       <Wrapper>
-        <h1>Our Vegetatian Picks</h1>
+        <Typography variant="h3" fontFamily="Source Serif Pro">
+          Our Vegetatian Picks
+        </Typography>
+
         <Splide
           options={{
             perPage: 4,

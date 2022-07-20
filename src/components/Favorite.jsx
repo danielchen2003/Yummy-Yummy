@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { motion } from "framer-motion"
 import { Link, useParams } from "react-router-dom"
-import { CardActions, Checkbox, IconButton } from "@mui/material"
+import { CardActions, Checkbox, IconButton, Typography } from "@mui/material"
 import { FaShare } from "react-icons/fa"
 import DeleteIcon from "@mui/icons-material/Delete"
 import { Box, Stack, Skeleton } from "@mui/material"
@@ -40,7 +40,9 @@ export default function Favorite({ favorite, setFavorite }) {
         </Stack>
       ) : (
         <>
-          <h1>My Favorites</h1>
+          <Typography variant="h3" fontFamily="Source Serif Pro">
+            My Favorites
+          </Typography>
           <Grid
             animate={{ opacity: 1 }}
             initial={{ opacity: 0 }}
