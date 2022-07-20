@@ -8,6 +8,7 @@ import Recipe from "./Recipe"
 import { AnimatePresence } from "framer-motion"
 import { Box } from "@mui/material"
 import Favorite from "../components/Favorite"
+import examplePost from "../data"
 
 export default function Pages() {
   const location = useLocation()
@@ -15,8 +16,9 @@ export default function Pages() {
   const checkFavorite = localStorage.getItem("Favorite")
   const getFavorite = () => {
     if (checkFavorite) {
-      setFavorite(JSON.parse(checkFavorite))
-      // console.log(favorite)
+      const faverateRecipe = JSON.parse(checkFavorite)
+      setFavorite([...examplePost, ...faverateRecipe])
+      console.log(favorite)
     } else {
       setFavorite([])
     }
@@ -24,7 +26,6 @@ export default function Pages() {
   useEffect(() => {
     getFavorite()
   }, [])
-  console.log(favorite)
 
   return (
     <Box flex={7.5} p={2}>

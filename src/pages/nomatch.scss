@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
+$nunito-font: "Nunito", sans-serif;
+
+// mixins
+
+// keyrames
+
+.mars {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  height: 27vmin;
+  background: url("https://assets.codepen.io/1538474/mars.svg") no-repeat bottom
+    center;
+  background-size: cover;
+}
+
+.logo-404 {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 25vmin;
+  width: 30vmin;
+}
+
+.meteor {
+  position: absolute;
+  right: 2vmin;
+  top: 25vmin;
+}
+
+.title {
+  color: white;
+  font-family: $nunito-font;
+  font-weight: 600;
+  text-align: center;
+  font-size: 5vmin;
+  margin-top: 30vmin;
+  padding-right: 150px;
+}
+
+.subtitle {
+  color: white;
+  font-family: $nunito-font;
+  font-weight: 400;
+  text-align: center;
+  font-size: 3.5vmin;
+  margin-top: -1vmin;
+  margin-bottom: 9vmin;
+  padding-right: 150px;
+}
+
+.btn-back {
+  position: absolute;
+  border: 1px solid white;
+  color: white;
+
+  padding: 12px;
+  font-family: Roboto;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: -88px;
+  margin-left: -200px;
+  &:hover {
+    background: white;
+    color: #4d007d;
+  }
+}
+
+.astronaut {
+  position: absolute;
+  top: 18vmin;
+  left: 30vmin;
+  height: 30vmin;
+  animation: floating 3s infinite ease-in-out;
+}
+
+.spaceship {
+  position: absolute;
+  bottom: 15vmin;
+  right: 24vmin;
+}

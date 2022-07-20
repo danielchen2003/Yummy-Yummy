@@ -39,17 +39,6 @@ export default function Cuisine() {
               <img src={item.image} alt="" />
               <h4>{item.title}</h4>
             </Link>
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <Checkbox
-                  icon={<FavoriteBorder />}
-                  checkedIcon={<Favorite sx={{ color: "red" }} />}
-                />
-              </IconButton>
-              <IconButton aria-label="share">
-                <Share />
-              </IconButton>
-            </CardActions>
           </Card>
         )
       })}

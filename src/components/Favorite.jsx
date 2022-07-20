@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom"
 import { CardActions, Checkbox, IconButton } from "@mui/material"
 import { FaShare } from "react-icons/fa"
 import DeleteIcon from "@mui/icons-material/Delete"
+import { Box, Stack, Skeleton } from "@mui/material"
 import {
   Favorite as Favoriteicon,
   FavoriteBorder,
@@ -19,46 +20,58 @@ export default function Favorite({ favorite, setFavorite }) {
   //   const updateFavorite = favorite
   //   localStorage.setItem("Favorite", JSON.stringify(updateFavorite))
   // }, [favorite])
+  const [loading, setLoading] = useState(true)
 
   function deleteOnClick(id) {
     setFavorite((prev) =>
       prev.filter((favoriteRecipt) => favoriteRecipt.id != id)
-      
     )
   }
+  setTimeout(() => setLoading(false), 500)
 
   return (
-    <Grid
-      animate={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      {favorite.map((item) => {
-        return (
-          <Card key={item.id}>
-            <Link to={`/recipe/${item.id}`}>
-              <img src={item.image} alt="" />
-              <h4>{item.title}</h4>
-            </Link>
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
-                <Checkbox
-                  icon={<FavoriteBorder />}
-                  checkedIcon={<Favoriteicon sx={{ color: "red" }} />}
-                />
-              </IconButton>
-              <IconButton
-                onClick={() => deleteOnClick(item.id)}
-                aria-label="Delete"
-              >
-                <DeleteIcon />
-              </IconButton>
-            </CardActions>
-          </Card>
-        )
-      })}
-    </Grid>
+    <div>
+      {loading ? (
+        <Stack spacing={1}>
+          <Skeleton variant="text" height={100} />
+          <Skeleton variant="text" height={20} />
+          <Skeleton variant="text" height={20} />
+          <Skeleton variant="rectangular" height={300} />
+        </Stack>
+      ) : (
+        <>
+          <h1>My Favorites</h1>
+          <Grid
+            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {favorite.map((item) => {
+              return (
+                <Card key={item.id}>
+                  <Link to={`/recipe/${item.id}`}>
+                    <img src={item.image} alt="" />
+                    <h4>{item.title}</h4>
+                  </Link>
+                  <CardActions disableSpacing>
+                    <IconButton aria-label="add to favorites">
+                      <Checkbox icon={<Favoriteicon sx={{ color: "red" }} />} />
+                    </IconButton>
+                    <IconButton
+                      onClick={() => deleteOnClick(item.id)}
+                      aria-label="Delete"
+                    >
+                      <DeleteIcon />
+                    </IconButton>
+                  </CardActions>
+                </Card>
+              )
+            })}
+          </Grid>
+        </>
+      )}
+    </div>
   )
 }
 
@@ -90,8 +103,11 @@ const Card = styled.div`
   img {
     width: 100%;
     border-radius: 2rem;
+
+    max-height: 325px;
   }
   a {
+    color: #f04328;
     text-decoration: none;
   }
   h4 {
@@ -141,3 +157,7 @@ const Card = styled.div`
 //   const removeFromWatched = (id) => {
 //     dispatch({ type: "REMOVE_FROM_WATCHED", payload: id });
 //   };
+
+const middleH1 = styled.h1`
+  text-align: center;
+`

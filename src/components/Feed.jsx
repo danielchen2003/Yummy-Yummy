@@ -1,30 +1,32 @@
 import { Box, Stack, Skeleton } from "@mui/material"
 import React, { useState, useEffect } from "react"
 import Post from "./Post"
+import examplePost from "../data"
 
 const Feed = () => {
-  const [loading, setLoading] = useState(false)
-  const [newPost, setNewPost] = useState([])
-  useEffect(() => {
-    getNewPost()
-  }, [])
-  const getNewPost = async () => {
-    const check = localStorage.getItem("newPost")
-    if (check) {
-      setNewPost(JSON.parse(check))
-    } else {
-      setLoading(true)
-      const api = await fetch(
-        `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=7`
-      )
+  const [loading, setLoading] = useState(true)
+  const [newPost, setNewPost] = useState(examplePost)
+  // useEffect(() => {
+  //   getNewPost()
+  // }, [])
+  // const getNewPost = async () => {
+  // const check = localStorage.getItem("newPost")
+  // if (check) {
+  //   setNewPost(JSON.parse(check))
+  // } else {
+  //   setLoading(true)
+  //   const api = await fetch(
+  //     `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=7`
+  //   )
 
-      const data = await api.json()
-      setLoading(false)
-      localStorage.setItem("newPost", JSON.stringify(data.recipes))
-      setNewPost(data.recipes)
-      console.log(data)
-    }
-  }
+  // const data = await api.json()
+  // setLoading(false)
+  // localStorage.setItem("newPost", JSON.stringify(data.recipes))
+  //     setNewPost(data.recipes)
+  //     console.log(data)
+  //   }
+  // }
+  setTimeout(() => setLoading(false), 3000)
 
   return (
     <Box flex={4} p={{ xs: 0, md: 2 }}>

@@ -132,7 +132,7 @@ export default function Sidebar({ mode, setMode }) {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
+            <ListItemButton component="a">
               <ListItemIcon>
                 <ModeNight fontSize="large" />
               </ListItemIcon>

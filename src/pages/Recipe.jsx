@@ -111,7 +111,7 @@ const DetailWrapper = styled.div`
   display: flex;
   a {
     text-decoration: none;
-    color: #8acedb;
+    color: #257bb9;
   }
   .active {
     background: linear-gradient(35deg, #494949, #313131);

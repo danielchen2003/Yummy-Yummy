@@ -38,14 +38,14 @@ const Slink = styled(NavLink)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  margin-right: 2rem;
-  text-decoration: none;
-  background: linear-gradient(35deg, #8acedb, #8acedb);
   width: 6rem;
   height: 6rem;
   cursor: pointer;
   transform: scale(0.8);
+  border-radius: 50%;
+  margin-right: 2rem;
+  text-decoration: none;
+  background: linear-gradient(35deg, #8acedb, #8acedb);
 
   h4 {
     color: white;

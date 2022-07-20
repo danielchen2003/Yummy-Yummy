@@ -14,7 +14,7 @@ import { Link } from "react-router-dom"
 
 export default function Post(props) {
   return (
-    <Card sx={{ margin: 5 }}>
+    <Card sx={{ margin: 5 }} key={props.recipe.id}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: "#f04328" }} aria-label="recipe">
@@ -29,7 +29,7 @@ export default function Post(props) {
         title="Linfeng Chen"
         subheader="September 01, 2022"
       />
-      <Link to={`/recipe/${props.recipe.id}`} text-decoration="none">
+      <Link to={`/recipe/${props.recipe.id}`} textDecoration="none">
         <CardMedia
           component="img"
           height="20%"
@@ -38,16 +38,20 @@ export default function Post(props) {
         />
       </Link>
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="h4" color="text.secondary">
           {props.recipe.title}
+        </Typography>
+
+        <Typography variant="body1" color="text.secondary">
+          {props.recipe.instructions}
         </Typography>
       </CardContent>
 
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <Checkbox
-            icon={<FavoriteBorder />}
-            checkedIcon={<Favorite sx={{ color: "red" }} />}
+            icon={<Favorite sx={{ color: "red" }} />}
+            checkedIcon={<Favorite sx={{ color: "blue" }} />}
           />
         </IconButton>
         <IconButton aria-label="share">

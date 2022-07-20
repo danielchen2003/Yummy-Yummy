@@ -17,6 +17,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Link,
 } from "@mui/material"
 import { useState } from "react"
 import React from "react"
@@ -29,7 +30,7 @@ import { Mail, Notifications, Pets } from "@mui/icons-material"
 import Button from "@mui/material/Button"
 // import SearchKeyWords from "./SearchKeyWords"
 import SearchIcon from "@mui/icons-material/Search"
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import PrimarySearchBar from "./Seachbar"
 
 export default function Navbar({ darkTheme }) {
@@ -72,23 +73,26 @@ export default function Navbar({ darkTheme }) {
   return (
     <AppBar position="sticky">
       <StyledToolbar>
-        <Icons>
-          <FoodBankRoundedIcon
-            margin="0"
-            p="0"
-            fontSize="large"
-          ></FoodBankRoundedIcon>
-          <Typography
-            fontFamily="Source Serif Pro"
-            alignContent="center"
-            justifyContent="center"
-            gutterBottom={false}
-            variant="h3"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
-            Yummy
-          </Typography>
-        </Icons>
+        <Link href="/" textDecoration="none" underline="none">
+          <Icons>
+            <FoodBankRoundedIcon
+              color="secondary"
+              fontSize="large"
+            ></FoodBankRoundedIcon>
+
+            <Typography
+              fontFamily="Source Serif Pro"
+              alignContent="center"
+              justifyContent="center"
+              gutterBottom={false}
+              variant="h3"
+              color="secondary"
+              sx={{ display: { xs: "none", sm: "block" } }}
+            >
+              Yummy
+            </Typography>
+          </Icons>
+        </Link>
 
         <FoodBankRoundedIcon
           fontSize="large"
