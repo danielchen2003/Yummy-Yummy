@@ -44,7 +44,7 @@ export default function Recipe({ favorite, setFavorite }) {
     <DetailWrapper>
       <div>
         <h2>{details.title}</h2>
-        <img src={details.image} alt="recipe image" />
+        <img loading="lazy" src={details.image} alt="recipe image" />
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites">
             <Checkbox

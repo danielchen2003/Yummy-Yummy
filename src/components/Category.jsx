@@ -31,7 +31,8 @@ export default function Category() {
 const List = styled.div`
   display: flex;
   justify-content: center;
-  margin: 2rem, 0;
+  margin: 5rem, 0;
+  margin-top: 2.5rem;
 `
 const Slink = styled(NavLink)`
   display: flex;
