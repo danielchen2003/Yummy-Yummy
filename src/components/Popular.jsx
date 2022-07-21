@@ -40,7 +40,12 @@ export default function Popular() {
             arrows: true,
             pagination: false,
             drag: "free",
-            gap: "0.5rem",
+            gap: "2rem",
+            breakpoints: {
+              640: {
+                perPage: 1,
+              },
+            },
           }}
         >
           {popular.map((recipe) => {

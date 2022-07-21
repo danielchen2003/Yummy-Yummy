@@ -7,7 +7,7 @@ import NoMatch from "./NoMatch"
 import Recipe from "./Recipe"
 import { AnimatePresence } from "framer-motion"
 import { Box } from "@mui/material"
-import Favorite from "../components/Favorite"
+import Favorite from "./Favorite"
 import examplePost from "../data"
 
 export default function Pages() {

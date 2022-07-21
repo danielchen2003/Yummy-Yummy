@@ -40,7 +40,12 @@ export default function Veggie() {
             arrows: true,
             pagination: false,
             drag: "free",
-            gap: "0.5rem",
+            gap: "1rem",
+            breakpoints: {
+              640: {
+                perPage: 1,
+              },
+            },
           }}
         >
           {veggie.map((recipe) => {
