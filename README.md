@@ -74,6 +74,19 @@ A Recipe Sharing and searching App
 - Show the new recipe on the main page when people post a new recipe.
 - Allow user to change other's recipe and put into their own bookmark.
 
+## Component hierarchy
+
+ <table>
+  <tr>
+     <td>Yummy-App Component hierarchy digram</td>
+     
+  </tr>
+  <tr>
+     <td valign="top"><img src = "screenshot/Components.png" width=1000 /></td>
+    
+  </tr>
+ </table>
+
 <br />
 <br />
 
