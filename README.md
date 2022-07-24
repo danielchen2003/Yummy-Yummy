@@ -184,6 +184,19 @@ A Recipe Sharing and searching App
   </tr>
  </table>
 
+## Wireframe
+
+<table>
+<tr>
+     <td>Wireframe Your App</td>
+     
+  </tr>
+  <tr>
+     <td valign="top"><img src = "screenshot/wireframe.png" width=1000 /></td>
+    
+  </tr>
+ </table>
+
 ## Install
 
 ```sh
