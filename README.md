@@ -51,7 +51,34 @@ A Recipe Sharing and searching App
 
 <br />
 <br />
-Desktop ShowCase
+
+## Basic Features
+
+1. Allow user search recipes in the Api.
+2. Create/Delete your recipe.
+3. View other people's recipes and react to it with a like or bookmark it to your dashboard.
+4. Check recent our popular pick recipes.
+5. Check recent our Veggie pick recipes.
+6. Browse recipes from various countries.
+7. Explore recipes by various dish categories such as Pizza, Kebob, IceCream.
+8. Discover new recipes through different ingredient.
+9. Perfect presentation of recipes on the iphone and other smartphone screems.
+10. Nice looking no match page with animation and pngs.
+11. Receving Data from spoonacular API by Axios.
+
+## Upcoming features
+
+- Allow user to register as well as login and logout.
+- Allow user to define your own search recommendations on the home page.
+- Get search result and load as fast as possible.
+- Show the new recipe on the main page when people post a new recipe.
+- Allow user to change other's recipe and put into their own bookmark.
+
+<br />
+<br />
+
+## Desktop ShowCase
+
 <table>
   <tr>
      <td>New Recipe Post Page</td>
@@ -77,7 +104,9 @@ Desktop ShowCase
 
 <br />
 <br />
-Presente on Iphone 12
+
+## Presente on Iphone 12
+
 <table>
   <tr>
      <td>New Recipe Post Page</td>
@@ -99,7 +128,7 @@ Presente on Iphone 12
   </tr>
  </table>
 
-Change Theme
+## Change Theme
 
  <table>
   <tr>
@@ -120,7 +149,8 @@ Change Theme
     
   </tr>
  </table>
-  Others
+ 
+## Others
   <table>
   <tr>
      <td>No Match Page</td>
@@ -169,28 +199,6 @@ npm start
 - Axios
 - Figma
 - Prettier
-
-## Basic Features
-
-1. Allow user search recipes in the Api.
-2. Create/Delete your recipe.
-3. View other people's recipes and react to it with a like or bookmark it to your dashboard.
-4. Check recent our popular pick recipes.
-5. Check recent our Veggie pick recipes.
-6. Browse recipes from various countries.
-7. Explore recipes by various dish categories such as Pizza, Kebob, IceCream.
-8. Discover new recipes through different ingredient.
-9. Perfect presentation of recipes on the iphone and other smartphone screems.
-10. Nice looking no match page with animation and pngs.
-11. Receving Data from spoonacular API by Axios.
-
-## Upcoming features
-
-- Allow user to register as well as login and logout.
-- Allow user to define your own search recommendations on the home page.
-- Get search result and load as fast as possible.
-- Show the new recipe on the main page when people post a new recipe.
-- Allow user to change other's recipe and put into their own bookmark.
 
 ## License
 
