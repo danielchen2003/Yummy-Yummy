@@ -12,7 +12,7 @@ export default function NoMatch() {
   }))
   return (
     <Canvas>
-      <Confetti></Confetti>
+      <Confetti />
       <div class="mars"></div>
       <img src="https://assets.codepen.io/1538474/404.svg" class="logo-404" />
       <div align="center">

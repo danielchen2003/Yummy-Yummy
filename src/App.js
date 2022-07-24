@@ -11,6 +11,7 @@ import React, { useState } from "react"
 
 import Feed from "./components/Feed"
 import { Add } from "@mui/icons-material"
+import Footer from "./components/Footer"
 
 export default function App() {
   const [mode, setMode] = useState("dark")
@@ -40,6 +41,7 @@ export default function App() {
               <Sidebar setMode={setMode} mode={mode} />
               <Pages />
             </Stack>
+            <Footer></Footer>
           </BrowserRouter>
         </Paper>
       </ThemeProvider>

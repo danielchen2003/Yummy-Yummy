@@ -151,9 +151,21 @@ export default function Navbar({ darkTheme }) {
           horizontal: "right",
         }}
       >
-        <MenuItem>Profile</MenuItem>
-        <MenuItem>My account</MenuItem>
-        <MenuItem>Logout</MenuItem>
+        <MenuItem>
+          <Link href="/favorite" textDecoration="none" underline="none">
+            Profile
+          </Link>
+        </MenuItem>
+        <MenuItem>
+          <Link href="/favorite" textDecoration="none" underline="none">
+            My account
+          </Link>
+        </MenuItem>
+        <MenuItem>
+          <Link href="/favorite" textDecoration="none" underline="none">
+            Favorite
+          </Link>
+        </MenuItem>
       </Menu>
     </AppBar>
   )

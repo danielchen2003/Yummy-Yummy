@@ -91,7 +91,7 @@ export default function Recipe({ favorite, setFavorite }) {
             <Typography paragraph>{details.summary}</Typography> */}
             <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
             <h3 dangerouslySetInnerHTML={{ __html: details.instructions }}></h3>
-            <h3>Estimated cooking time: {details.readyInMinutes}</h3>
+            <h2>Estimated cooking time: {details.readyInMinutes}</h2>
           </div>
         )}
         {activeTab === "ingredients" && (
@@ -122,11 +122,15 @@ const DetailWrapper = styled.div`
   }
   h3 {
     font-family: roboto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27.04px;
   }
   li {
-    font-size: 1.2rem;
+    font-size: 16px;
     line-height: 2.5rem;
     font-family: roboto;
+    font-weight: 400;
   }
   ul {
     margin-top: 2rem;
