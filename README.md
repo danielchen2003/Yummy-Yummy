@@ -118,7 +118,7 @@ A Recipe Sharing and searching App
 <br />
 <br />
 
-## Presente on Iphone 12
+## Presentation on Iphone 12
 
 <table>
   <tr>
