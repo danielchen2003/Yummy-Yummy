@@ -57,9 +57,7 @@ const Grid = styled.div`
   grid-gap: 3rem;
 `
 
-/* display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-gap: 3rem; */
+
 const Card = styled.div`
   img {
     width: 100%;
