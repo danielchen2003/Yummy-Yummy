@@ -13,9 +13,7 @@ export default function Cuisine() {
     const data = await fetch(
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=12`
     )
-    console.log(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=9`
-    )
+    
     const recipes = await data.json()
     setCuisine(recipes.results)
     console.log(recipes)
@@ -46,19 +44,7 @@ export default function Cuisine() {
   )
 }
 
-{
-  /* <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <Checkbox
-            icon={<FavoriteBorder />}
-            checkedIcon={<Favorite sx={{ color: "red" }} />}
-          />
-        </IconButton>
-        <IconButton aria-label="share">
-          <Share />
-        </IconButton>
-      </CardActions> */
-}
+
 
 const Grid = styled(motion.div)`
   display: grid;
